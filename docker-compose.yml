@@ -1,0 +1,13 @@
+services:
+  app:
+    image: node:20-alpine
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    # コンテナ起動時に開発サーバーを立ち上げるコマンド
+    command: npm run dev
+    # インストール等が終わるまではcommandを無効化しておくための工夫
+    # (初回起動時にエラーにならないようにする)
+    tty: true
