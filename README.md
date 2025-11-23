@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# コレ。
 
-## Getting Started
+迷いを断つ、究極のランダム決定ツール。
 
-First, run the development server:
+## 概要
 
+「コレ。」は、日常の小さな選択から重要な決断まで、あらゆる迷いを瞬時に解決するミニマルなWebアプリケーションです。
+選択肢を入力し、ボタンを押すだけで、あなたの代わりに「コレ！」と決めてくれます。
+
+## 特徴
+
+- **ミニマルデザイン**: ブルータリズムを基調とした、無駄を削ぎ落としたUI
+- **瞬時の決定**: 迷う時間をゼロに
+- **完全ランダム**: 公平で偏りのない選択
+- **レスポンシブ対応**: スマートフォンからPCまで、あらゆるデバイスで利用可能
+
+## 技術スタック
+
+- **フレームワーク**: Next.js 16.0.3 (App Router)
+- **ライブラリ**: React 19.2.0
+- **スタイリング**: Tailwind CSS v4
+- **アニメーション**: Framer Motion 12.23
+- **言語**: TypeScript 5.x
+- **コンテナ**: Docker (Node.js 20-alpine)
+
+## セットアップ
+
+### 前提条件
+- Docker Desktop がインストールされていること
+- Git がインストールされていること
+
+### インストール手順
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# リポジトリをクローン
+git clone [your-repository-url]
+cd kore
+
+# 依存関係のインストール
+docker compose run --rm app npm install
+
+# 開発サーバーの起動
+docker compose up
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[http://localhost:3000](http://localhost:3000) にアクセスして動作を確認してください。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ビルド & デプロイ
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 静的サイトとしてビルド
+```bash
+# プロダクションビルド
+docker compose run --rm app npm run build
+```
 
-## Learn More
+`out`フォルダに静的ファイルが生成されます。
 
-To learn more about Next.js, take a look at the following resources:
+### デプロイ方法
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. `out`フォルダ内のすべてのファイルをWebサーバーにアップロード
+2. 対応ホスティングサービス:
+   - エックスサーバー
+   - Netlify
+   - Vercel
+   - GitHub Pages
+   - その他の静的サイトホスティング
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## プロジェクト構成
+```
+kore/
+├── app/              # Next.js App Router
+├── components/       # Reactコンポーネント
+├── public/          # 静的ファイル
+├── out/             # ビルド出力（git管理外）
+├── docker-compose.yml
+└── next.config.ts
+```
 
-## Deploy on Vercel
+## デザインコンセプト
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **カラー**: モノクロ基調（黒・白・グレー）
+- **タイポグラフィ**: 太字フォントで力強い印象
+- **レイアウト**: 余白を活かしたミニマルな構成
+- **インタラクション**: スムーズなアニメーション
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ライセンス
+
+[プロジェクトのライセンスをここに記載]
+
+## 開発者
+
+Hiroki - Nerge LLC
+
+---
+
+*迷ったら、「コレ。」に決めてもらおう。*
